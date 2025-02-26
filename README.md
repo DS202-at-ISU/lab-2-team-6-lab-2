@@ -19,33 +19,14 @@ you are done with your submission.
 
 ### step 1 result:
 
-Jordyn’s work: 
-
-Ashlynn’s work:
-
-Eitan’s work:
-
-Ethan’s work:
-
 ### step 2 result:
 
-Jordyn’s work: 
-
-Ashlynn’s work:
-
-Eitan’s work:
-
-Ethan’s work:
+A variable that could be of special interest for this data set is Sale
+Price.
 
 ### step 3 result:
 
-Jordyn’s work: 
-
-Ashlynn’s work:
-
-Eitan’s work:
-
-Ethan’s work:
+abc
 
 ### step 4 result:
 
@@ -55,4 +36,5 @@ Ashlynn’s work:
 
 Eitan’s work:
 
-Ethan’s work:
+Ethan’s work: I chose to compare Year Built against the special interest
+variable of Sale Price.
