@@ -1,4 +1,6 @@
 ---
+title: 'DS 202 - Lab 2'
+author: "Team 6"
 output: github_document
 ---
 
@@ -22,7 +24,13 @@ Jordyn's work: 
 
 Ashlynn's work:
 
-Eitan's work:
+Eitan's work: 
+```{r, message =FALSE}
+library(classdata)
+data(ames)
+head(ames)
+```
+
 
 Ethan's work:
 
