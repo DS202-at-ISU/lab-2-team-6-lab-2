@@ -18,6 +18,7 @@ All submissions to the github repo will be automatically uploaded for grading on
 
 ### step 1 result:
 
+(Jordyn)
 
 ```{r}
 library(classdata)
@@ -27,10 +28,9 @@ head(ames)
 
 The variables included in the data set are Parcel ID (Categorical), Address (Categorical), Style (Categorical), Occupancy (Categorical), Sale Date (Categorical), Sale Price (Quantitative), Multi Sale (Categorical), Year Built (Categorical), Acres (Quantitative), Total Living Area (Quantitative), Bedrooms (Quantitative), Finished Basement Area (Quantitative), Lot Area (Quantitative), AC (Categorical), Fireplace (Categorical), Neighborhood (Categorical). Each variable represents a factor in the pricing of a home. We expect the ranges of the large variables to be in the thousands.
 
-
 ### step 2 result:
 
-A variable that could be of special interest for this data set is Sale Price. 
+A variable that could be of special interest for this data set is Sale Price.
 
 ### step 3 result:
 
@@ -40,9 +40,20 @@ abc
 
 Jordyn's work:
 
+I chose to compare the Lot Area against Sale Price to see if there were any relationships between the two.
+
+```{r}
+library(ggplot2)
+ggplot(data = ames, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+After plotting the data it is clear that there is really no relationship between the two variables. The graph was linear, negative, and had no correlation. There were several outliers, some in the y direction and some in the x direction. The range of lot area is 0 sf to 1,028 sf. I don't think that this pattern really explains any odd findings in the data, as there was no correlation.
+
+
 Ashlynn's work:
 
 Eitan's work:
 
-Ethan's work: I chose to compare Year Built against the special interest variable of Sale Price. 
-
+Ethan's work: I chose to compare Year Built against the special interest variable of Sale Price.
