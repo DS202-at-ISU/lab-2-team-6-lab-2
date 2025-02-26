@@ -18,23 +18,58 @@ All submissions to the github repo will be automatically uploaded for grading on
 
 ### step 1 result:
 
+(Jordyn)
+
+```{r}
+library(classdata)
+
+head(ames)
+```
+
+The variables included in the data set are Parcel ID (Categorical), Address (Categorical), Style (Categorical), Occupancy (Categorical), Sale Date (Categorical), Sale Price (Quantitative), Multi Sale (Categorical), Year Built (Categorical), Acres (Quantitative), Total Living Area (Quantitative), Bedrooms (Quantitative), Finished Basement Area (Quantitative), Lot Area (Quantitative), AC (Categorical), Fireplace (Categorical), Neighborhood (Categorical). Each variable represents a factor in the pricing of a home. We expect the ranges of the large variables to be in the thousands.
 
 ### step 2 result:
 
+<<<<<<< HEAD
 Ethan: A variable that could be of special interest for this data set is Sale Price. 
+=======
+A variable that could be of special interest for this data set is Sale Price.
+>>>>>>> 9abfb17d45b65ab961a4c9c7f70de4b1f548bb6d
 
-### step 3 result:
+### step 3 result:Ashlynn
 
-abc
+```{r}
+library(ggplot2)
+ggplot(ames, aes(x = `Sale Price`)) + 
+  geom_histogram(binwidth=100000) +
+  ggtitle("binwidth = 1000")
+```
+
 
 ### step 4 result:
 
 Jordyn's work:
+<<<<<<< HEAD
+=======
+
+I chose to compare the Lot Area against Sale Price to see if there were any relationships between the two.
+
+```{r}
+library(ggplot2)
+ggplot(data = ames, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+After plotting the data it is clear that there is really no relationship between the two variables. The graph was linear, negative, and had no correlation. There were several outliers, some in the y direction and some in the x direction. The range of lot area is 0 sf to 1,028 sf. I don't think that this pattern really explains any odd findings in the data, as there was no correlation.
+
+>>>>>>> 9abfb17d45b65ab961a4c9c7f70de4b1f548bb6d
 
 Ashlynn's work:
 
 Eitan's work:
 
+<<<<<<< HEAD
 Ethan's work: 
 I chose to compare Year Built against the special interest variable of Sale Price. The range of this variable is from 1880 - 2022 (with on line showing 0 as a the year built indicating an error in entering of the data) Below is the histogram plot of the variable "YearBuilt". The pattern shows the majority of the houses were built in the late 1990's and early 2000's, but besides the one outlier at 0 the data shows a bell curve that may be skewed left a bit. 
 ```{r}
@@ -50,3 +85,6 @@ After plotting just the "YearBuilt" variable, I plotted it against the special v
 #this is code for the scatterplot shown below comparing the two variables "SalePrice" and "YearBuilt". A limit was added to both of the axes in order to make the plot readable in a sense.Geom_smooth adds a line of best fit, although it is has no slope. 
 ggplot(ames, aes(x=`Sale Price`, y=YearBuilt)) + geom_point() + scale_y_continuous(limits = c(1880,2022)) + scale_x_continuous(limits = c(0,306000)) +  geom_smooth(method = "lm", se = FALSE)
 ```
+=======
+Ethan's work: I chose to compare Year Built against the special interest variable of Sale Price.
+>>>>>>> 9abfb17d45b65ab961a4c9c7f70de4b1f548bb6d
