@@ -36,4 +36,5 @@ Ashlynn’s work:
 
 Eitan’s work:
 
-Ethan’s work:
+Ethan’s work: I chose to compare Year Built against the special interest
+variable of Sale Price.
