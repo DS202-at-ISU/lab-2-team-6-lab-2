@@ -66,7 +66,8 @@ the large variables to be in the thousands.
 
 ### step 2 result:
 
-def
+A variable that could be of special interest for this data set is Sale
+Price.
 
 ### step 3 result:
 
@@ -80,4 +81,5 @@ Ashlynn’s work:
 
 Eitan’s work:
 
-Ethan’s work:
+Ethan’s work: I chose to compare Year Built against the special interest
+variable of Sale Price.
