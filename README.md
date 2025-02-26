@@ -69,9 +69,16 @@ the large variables to be in the thousands.
 A variable that could be of special interest for this data set is Sale
 Price.
 
-### step 3 result:
+### step 3 result:Ashlynn
 
-abc
+``` r
+library(ggplot2)
+ggplot(ames, aes(x = `Sale Price`)) + 
+  geom_histogram(binwidth=100000) +
+  ggtitle("binwidth = 1000")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 ### step 4 result:
 
