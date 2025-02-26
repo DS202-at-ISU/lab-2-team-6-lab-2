@@ -19,15 +19,33 @@ you are done with your submission.
 
 ### step 1 result:
 
-abc
+Jordyn’s work: 
+
+Ashlynn’s work:
+
+Eitan’s work:
+
+Ethan’s work:
 
 ### step 2 result:
 
-def
+Jordyn’s work: 
+
+Ashlynn’s work:
+
+Eitan’s work:
+
+Ethan’s work:
 
 ### step 3 result:
 
-abc
+Jordyn’s work: 
+
+Ashlynn’s work:
+
+Eitan’s work:
+
+Ethan’s work:
 
 ### step 4 result:
 
