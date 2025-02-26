@@ -68,8 +68,8 @@ the large variables to be in the thousands.
 
 ### step 2 result:
 
-Ethan: A variable that could be of special interest for this data set is
-Sale Price.
+(Ethan) A variable that could be of special interest for this data set
+is Sale Price.
 
 ### step 3 result:Ashlynn
 
@@ -84,9 +84,7 @@ ggplot(ames, aes(x = `Sale Price`)) +
 
 ### step 4 result:
 
-Jordyn’s work:
-<<<<<<< HEAD
-=======
+Jordyn’s work: \<\<\<\<\<\<\< HEAD =======
 
 I chose to compare the Lot Area against Sale Price to see if there were
 any relationships between the two.
@@ -106,7 +104,7 @@ ggplot(data = ames, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
     ## Warning: Removed 89 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 After plotting the data it is clear that there is really no relationship
 between the two variables. The graph was linear, negative, and had no
@@ -114,7 +112,8 @@ correlation. There were several outliers, some in the y direction and
 some in the x direction. The range of lot area is 0 sf to 1,028 sf. I
 don’t think that this pattern really explains any odd findings in the
 data, as there was no correlation.
->>>>>>> 9abfb17d45b65ab961a4c9c7f70de4b1f548bb6d
+
+> > > > > > > 9abfb17d45b65ab961a4c9c7f70de4b1f548bb6d
 
 Ashlynn’s work:
 
@@ -148,20 +147,21 @@ ggplot(ames, aes(x=YearBuilt)) + geom_histogram(binwidth = 5) + scale_x_continuo
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_bar()`).
 
-![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- --> After
-plotting just the “YearBuilt” variable, I plotted it against the special
-variable of interest “SalePrice”. Below is the scatterplot of the two
-variables. A limit was added to both of the axes in order to make the
-plot readable in a sense. The y limit removed 1 outlier where the
-“YearBuilt” variable was 0, and the x limit removed two sets of outliers
-where the “SalePrice” was 20,000,000 and 14,000,000. From this graph,
-you can identify somewhat of a positive correlation, but not a strong
-one as data points are everywhere. An interesting oddity would be at the
-y axis, where there are a bunch of points ranging from all years where
-the “SalePrice” was 0. This plot still shows the oddities of the main
-variable from step 3 as it shows points at 0 on the y axis, but it does
-not show the outlier oddities that were removed from this graph to make
-it readable. Overall, this plot has an unclear shape as points are
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+After plotting just the “YearBuilt” variable, I plotted it against the
+special variable of interest “SalePrice”. Below is the scatterplot of
+the two variables. A limit was added to both of the axes in order to
+make the plot readable in a sense. The y limit removed 1 outlier where
+the “YearBuilt” variable was 0, and the x limit removed two sets of
+outliers where the “SalePrice” was 20,000,000 and 14,000,000. From this
+graph, you can identify somewhat of a positive correlation, but not a
+strong one as data points are everywhere. An interesting oddity would be
+at the y axis, where there are a bunch of points ranging from all years
+where the “SalePrice” was 0. This plot still shows the oddities of the
+main variable from step 3 as it shows points at 0 on the y axis, but it
+does not show the outlier oddities that were removed from this graph to
+make it readable. Overall, this plot has an unclear shape as points are
 scattered all over, unclear pattern as there is no slope for the line of
 best fit, weak strength as there is very little clustering between
 points, and a very wide spread.
@@ -179,4 +179,4 @@ ggplot(ames, aes(x=`Sale Price`, y=YearBuilt)) + geom_point() + scale_y_continuo
     ## Warning: Removed 1782 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
