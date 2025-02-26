@@ -19,6 +19,8 @@ you are done with your submission.
 
 ### step 1 result:
 
+(Jordyn)
+
 ``` r
 library(classdata)
 
@@ -83,6 +85,33 @@ ggplot(ames, aes(x = `Sale Price`)) +
 ### step 4 result:
 
 Jordyn’s work:
+
+I chose to compare the Lot Area against Sale Price to see if there were
+any relationships between the two.
+
+``` r
+library(ggplot2)
+ggplot(data = ames, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+    ## `geom_smooth()` using formula = 'y ~ x'
+
+    ## Warning: Removed 89 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 89 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+After plotting the data it is clear that there is really no relationship
+between the two variables. The graph was linear, negative, and had no
+correlation. There were several outliers, some in the y direction and
+some in the x direction. The range of lot area is 0 sf to 1,028 sf. I
+don’t think that this pattern really explains any odd findings in the
+data, as there was no correlation.
 
 Ashlynn’s work:
 
