@@ -19,11 +19,10 @@ you are done with your submission.
 
 ### step 1 result:
 
-abc
-
 ### step 2 result:
 
-def
+A variable that could be of special interest for this data set is Sale
+Price.
 
 ### step 3 result:
 
