@@ -29,7 +29,6 @@ head(ames)
 The variables included in the data set are Parcel ID (Categorical), Address (Categorical), Style (Categorical), Occupancy (Categorical), Sale Date (Categorical), Sale Price (Quantitative), Multi Sale (Categorical), Year Built (Categorical), Acres (Quantitative), Total Living Area (Quantitative), Bedrooms (Quantitative), Finished Basement Area (Quantitative), Lot Area (Quantitative), AC (Categorical), Fireplace (Categorical), Neighborhood (Categorical). Each variable represents a factor in the pricing of a home. We expect the ranges of the large variables to be in the thousands.
 
 ### step 2 result:
-<<<<<<< HEAD
 (Ethan)
 A variable that could be of special interest for this data set is Sale Price. 
 
@@ -47,40 +46,10 @@ ggplot(ames, aes(x = `Sale Price`)) +
 range(ames$`Sale Price`, na.rm = T)
 ```
 The general pattern is that the higher the price of the house the less houses there are. Oddities include insane outliers at certain prices.
-=======
-
-(Ethan)
-A variable that could be of special interest for this data set is Sale Price. 
-
-### step 3 result:Ashlynn
-
-```{r}
-library(ggplot2)
-ggplot(ames, aes(x = `Sale Price`)) + 
-  geom_histogram(binwidth=100000) +
-  ggtitle("binwidth = 1000")
-```
-
->>>>>>> 3e0356d9c20b363339b0124d404117ab3a220c37
 
 ### step 4 result:
 
 Jordyn's work:
-<<<<<<< HEAD
-=======
-
-I chose to compare the Lot Area against Sale Price to see if there were any relationships between the two.
-
-```{r}
-library(ggplot2)
-ggplot(data = ames, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE)
-```
-
-After plotting the data it is clear that there is really no relationship between the two variables. The graph was linear, negative, and had no correlation. There were several outliers, some in the y direction and some in the x direction. The range of lot area is 0 sf to 1,028 sf. I don't think that this pattern really explains any odd findings in the data, as there was no correlation.
-
->>>>>>> 9abfb17d45b65ab961a4c9c7f70de4b1f548bb6d
 
 I chose to compare the Lot Area against Sale Price to see if there were any relationships between the two.
 
@@ -96,28 +65,6 @@ After plotting the data it is clear that there is really no relationship between
 Ashlynn's work:
 
 Eitan's work:
-
-<<<<<<< HEAD
-I chose to compare the variable Bedrooms against the main variable Sale Price. I believe that it could be correlated as when the sales price goes up the number of bedrooms is likely to follow that trend aswell. 
-=======
-
-Ethan's work: 
-I chose to compare Year Built against the special interest variable of Sale Price. The range of this variable is from 1880 - 2022 (with on line showing 0 as a the year built indicating an error in entering of the data) Below is the histogram plot of the variable "YearBuilt". The pattern shows the majority of the houses were built in the late 1990's and early 2000's, but besides the one outlier at 0 the data shows a bell curve that may be skewed left a bit. 
-```{r}
-library(classdata)
-#the below code shows how I found the range of the variable "YearBuilt"
-range(ames$YearBuilt, na.rm = T)
-library(ggplot2)
-#this code shows a histogram of the "YearBuilt" variable with a bandwidth of 5 to show the differences in years between the data. The x axis values were wide because there is one house at 0 due to incorrect entering of data, so a limit was added to the x axis to make the data more readable. 
-ggplot(ames, aes(x=YearBuilt)) + geom_histogram(binwidth = 5) + scale_x_continuous(limits = c(1880,2022))
-```
-
-After plotting just the "YearBuilt" variable, I plotted it against the special variable of interest "SalePrice". Below is the scatterplot of the two variables. A limit was added to both of the axes in order to make the plot readable in a sense. The y limit removed 1 outlier where the "YearBuilt" variable was 0, and the x limit removed two sets of outliers where the "SalePrice" was 20,000,000 and 14,000,000. From this graph, you can identify somewhat of a positive correlation, but not a strong one as data points are everywhere. An interesting oddity would be at the y axis, where there are a bunch of points ranging from all years where the "SalePrice" was 0. This plot still shows the oddities of the main variable from step 3 as it shows points at 0 on the y axis, but it does not show the outlier oddities that were removed from this graph to make it readable. Overall, this plot has an unclear shape as points are scattered all over, unclear pattern as there is no slope for the line of best fit, weak strength as there is very little clustering between points, and a very wide spread. 
-```{r}
-#this is code for the scatterplot shown below comparing the two variables "SalePrice" and "YearBuilt". A limit was added to both of the axes in order to make the plot readable in a sense.Geom_smooth adds a line of best fit, although it is has no slope. 
-ggplot(ames, aes(x=`Sale Price`, y=YearBuilt)) + geom_point() + scale_y_continuous(limits = c(1880,2022)) + scale_x_continuous(limits = c(0,306000)) +  geom_smooth(method = "lm", se = FALSE)
-```
->>>>>>> 3e0356d9c20b363339b0124d404117ab3a220c37
 
 ```{r}
 # get the range of the variable Bedrooms

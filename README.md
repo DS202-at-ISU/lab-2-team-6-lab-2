@@ -71,11 +71,9 @@ the large variables to be in the thousands.
 (Ethan) A variable that could be of special interest for this data set
 is Sale Price.
 
-<<<<<<< HEAD
-### step 3 result:Ashlynn and Eitan
-=======
-### step 3 result:Ashlynn
->>>>>>> 3e0356d9c20b363339b0124d404117ab3a220c37
+### step 3 result:
+
+(Ashlynn and Eitan)
 
 ``` r
 library(ggplot2)
@@ -85,7 +83,6 @@ ggplot(ames, aes(x = `Sale Price`)) +
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
-<<<<<<< HEAD
 
 ``` r
 # get the range of the variable sale price
@@ -96,41 +93,10 @@ range(ames$`Sale Price`, na.rm = T)
 
 The general pattern is that the higher the price of the house the less
 houses there are. Oddities include insane outliers at certain prices.
-=======
->>>>>>> 3e0356d9c20b363339b0124d404117ab3a220c37
 
 ### step 4 result:
 
-Jordyn’s work: \<\<\<\<\<\<\< HEAD =======
-
-I chose to compare the Lot Area against Sale Price to see if there were
-any relationships between the two.
-
-``` r
-library(ggplot2)
-ggplot(data = ames, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE)
-```
-
-    ## `geom_smooth()` using formula = 'y ~ x'
-
-    ## Warning: Removed 89 rows containing non-finite outside the scale range
-    ## (`stat_smooth()`).
-
-    ## Warning: Removed 89 rows containing missing values or values outside the scale range
-    ## (`geom_point()`).
-
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
-
-After plotting the data it is clear that there is really no relationship
-between the two variables. The graph was linear, negative, and had no
-correlation. There were several outliers, some in the y direction and
-some in the x direction. The range of lot area is 0 sf to 1,028 sf. I
-don’t think that this pattern really explains any odd findings in the
-data, as there was no correlation.
-
-> > > > > > > 9abfb17d45b65ab961a4c9c7f70de4b1f548bb6d
+Jordyn’s work:
 
 I chose to compare the Lot Area against Sale Price to see if there were
 any relationships between the two.
@@ -162,10 +128,6 @@ data, as there was no correlation.
 Ashlynn’s work:
 
 Eitan’s work:
-
-I chose to compare the variable Bedrooms against the main variable Sale
-Price. I believe that it could be correlated as when the sales price
-goes up the number of bedrooms is likely to follow that trend aswell.
 
 ``` r
 # get the range of the variable Bedrooms
@@ -258,11 +220,7 @@ ggplot(ames, aes(x=YearBuilt)) + geom_histogram(binwidth = 5) + scale_x_continuo
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_bar()`).
 
-<<<<<<< HEAD
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
-=======
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
->>>>>>> 3e0356d9c20b363339b0124d404117ab3a220c37
 
 After plotting just the “YearBuilt” variable, I plotted it against the
 special variable of interest “SalePrice”. Below is the scatterplot of
@@ -294,8 +252,4 @@ ggplot(ames, aes(x=`Sale Price`, y=YearBuilt)) + geom_point() + scale_y_continuo
     ## Warning: Removed 1782 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-<<<<<<< HEAD
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
-=======
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
->>>>>>> 3e0356d9c20b363339b0124d404117ab3a220c37
