@@ -1,6 +1,3 @@
-DS 202 - Lab 2
-================
-Team 6
 
 <!-- README.md is generated from README.Rmd. Please edit the README.Rmd file -->
 
@@ -22,15 +19,11 @@ you are done with your submission.
 
 ### step 1 result:
 
-Jordyn’s work: 
-
-Ashlynn’s work:
-
-Eitan’s work:
+(Jordyn)
 
 ``` r
 library(classdata)
-data(ames)
+
 head(ames)
 ```
 
@@ -63,34 +56,202 @@ head(ames)
     ## 5        No (19) Res: North Ridge Hei
     ## 6       Yes   (37) Res: College Creek
 
-Ethan’s work:
+The variables included in the data set are Parcel ID (Categorical),
+Address (Categorical), Style (Categorical), Occupancy (Categorical),
+Sale Date (Categorical), Sale Price (Quantitative), Multi Sale
+(Categorical), Year Built (Categorical), Acres (Quantitative), Total
+Living Area (Quantitative), Bedrooms (Quantitative), Finished Basement
+Area (Quantitative), Lot Area (Quantitative), AC (Categorical),
+Fireplace (Categorical), Neighborhood (Categorical). Each variable
+represents a factor in the pricing of a home. We expect the ranges of
+the large variables to be in the thousands.
 
 ### step 2 result:
 
-Jordyn’s work: 
+(Ethan) A variable that could be of special interest for this data set
+is Sale Price.
 
-Ashlynn’s work:
+### step 3 result:Ashlynn and Eitan
 
-Eitan’s work:
+``` r
+library(ggplot2)
+ggplot(ames, aes(x = `Sale Price`)) + 
+  geom_histogram(binwidth=100000) +
+  ggtitle("binwidth = 1000")
+```
 
-Ethan’s work:
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
-### step 3 result:
+``` r
+# get the range of the variable sale price
+range(ames$`Sale Price`, na.rm = T)
+```
 
-Jordyn’s work: 
+    ## [1]        0 20500000
 
-Ashlynn’s work:
-
-Eitan’s work:
-
-Ethan’s work:
+The general pattern is that the higher the price of the house the less
+houses there are. Oddities include insane outliers at certain prices.
 
 ### step 4 result:
 
-Jordyn’s work: 
+Jordyn’s work:
+
+I chose to compare the Lot Area against Sale Price to see if there were
+any relationships between the two.
+
+``` r
+library(ggplot2)
+ggplot(data = ames, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+    ## `geom_smooth()` using formula = 'y ~ x'
+
+    ## Warning: Removed 89 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 89 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+After plotting the data it is clear that there is really no relationship
+between the two variables. The graph was linear, negative, and had no
+correlation. There were several outliers, some in the y direction and
+some in the x direction. The range of lot area is 0 sf to 1,028 sf. I
+don’t think that this pattern really explains any odd findings in the
+data, as there was no correlation.
 
 Ashlynn’s work:
 
 Eitan’s work:
 
-Ethan’s work:
+I chose to compare the variable Bedrooms against the main variable Sale
+Price. I believe that it could be correlated as when the sales price
+goes up the number of bedrooms is likely to follow that trend aswell.
+
+``` r
+# get the range of the variable Bedrooms
+range(ames$Bedrooms, na.rm = T)
+```
+
+    ## [1]  0 10
+
+Now we will plot our variable Bedrooms.
+
+``` r
+# the plot shows the distribution of homes and their bedroom count
+ggplot(ames, aes(x=Bedrooms)) + 
+  geom_histogram(binwidth = .5) + 
+  scale_x_continuous(limits = c(0, 10))
+```
+
+    ## Warning: Removed 447 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+    ## Warning: Removed 2 rows containing missing values or values outside the scale range
+    ## (`geom_bar()`).
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+The pattern shows us that most homes have between 2 and 4 bedrooms with
+there obviously being outliers on either end.
+
+To find the relationship that the number of bedrooms has to the main
+variable of Sale Price I will plot a scatterplot.
+
+``` r
+# the plot shows the correlation between number of bedrooms as sale price
+ggplot(ames, aes(x = Bedrooms, y = `Sale Price`)) + 
+  geom_point(alpha = 0.5) +  
+  geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  scale_x_continuous(limits = c(0, 10)) + 
+  scale_y_continuous(limit = c(0, 1000000))
+```
+
+    ## `geom_smooth()` using formula = 'y ~ x'
+
+    ## Warning: Removed 817 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 817 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+``` r
+  labs(title = "Relationship Between Number of Bedrooms and Sale Price",
+       x = "Number of Bedrooms",
+       y = "Sale Price ($)") +
+  theme_minimal()
+```
+
+    ## NULL
+
+The overall pattern of the plot after I removed crazy outliers shows the
+trend we were expecting with a position correlation between sale price
+and number of bedrooms. The oddities that we found in 3 which were the
+outliers proved to influence the data as we expected if untouched.
+
+Ethan’s work: I chose to compare Year Built against the special interest
+variable of Sale Price. The range of this variable is from 1880 - 2022
+(with on line showing 0 as a the year built indicating an error in
+entering of the data) Below is the histogram plot of the variable
+“YearBuilt”. The pattern shows the majority of the houses were built in
+the late 1990’s and early 2000’s, but besides the one outlier at 0 the
+data shows a bell curve that may be skewed left a bit.
+
+``` r
+library(classdata)
+#the below code shows how I found the range of the variable "YearBuilt"
+range(ames$YearBuilt, na.rm = T)
+```
+
+    ## [1]    0 2022
+
+``` r
+library(ggplot2)
+#this code shows a histogram of the "YearBuilt" variable with a bandwidth of 5 to show the differences in years between the data. The x axis values were wide because there is one house at 0 due to incorrect entering of data, so a limit was added to the x axis to make the data more readable. 
+ggplot(ames, aes(x=YearBuilt)) + geom_histogram(binwidth = 5) + scale_x_continuous(limits = c(1880,2022))
+```
+
+    ## Warning: Removed 448 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+    ## Warning: Removed 2 rows containing missing values or values outside the scale range
+    ## (`geom_bar()`).
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+After plotting just the “YearBuilt” variable, I plotted it against the
+special variable of interest “SalePrice”. Below is the scatterplot of
+the two variables. A limit was added to both of the axes in order to
+make the plot readable in a sense. The y limit removed 1 outlier where
+the “YearBuilt” variable was 0, and the x limit removed two sets of
+outliers where the “SalePrice” was 20,000,000 and 14,000,000. From this
+graph, you can identify somewhat of a positive correlation, but not a
+strong one as data points are everywhere. An interesting oddity would be
+at the y axis, where there are a bunch of points ranging from all years
+where the “SalePrice” was 0. This plot still shows the oddities of the
+main variable from step 3 as it shows points at 0 on the y axis, but it
+does not show the outlier oddities that were removed from this graph to
+make it readable. Overall, this plot has an unclear shape as points are
+scattered all over, unclear pattern as there is no slope for the line of
+best fit, weak strength as there is very little clustering between
+points, and a very wide spread.
+
+``` r
+#this is code for the scatterplot shown below comparing the two variables "SalePrice" and "YearBuilt". A limit was added to both of the axes in order to make the plot readable in a sense.Geom_smooth adds a line of best fit, although it is has no slope. 
+ggplot(ames, aes(x=`Sale Price`, y=YearBuilt)) + geom_point() + scale_y_continuous(limits = c(1880,2022)) + scale_x_continuous(limits = c(0,306000)) +  geom_smooth(method = "lm", se = FALSE)
+```
+
+    ## `geom_smooth()` using formula = 'y ~ x'
+
+    ## Warning: Removed 1782 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 1782 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
