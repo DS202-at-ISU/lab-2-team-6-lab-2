@@ -127,6 +127,41 @@ data, as there was no correlation.
 
 Ashlynn’s work:
 
+``` r
+library(ggplot2)
+ggplot(data = ames, aes(x = `TotalLivingArea (sf)`, y = `Sale Price`)) +
+  geom_point(color = "skyblue", alpha = 0.7) +
+  geom_smooth(method = "lm", se = TRUE, color = "blue") +
+  scale_x_continuous(limits = c(0, 3000)) + 
+  scale_y_continuous(limit = c(0, 1000000))
+```
+
+    ## `geom_smooth()` using formula = 'y ~ x'
+
+    ## Warning: Removed 978 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 978 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
+  labs(title = "Scatter Plot of Total Living Area vs Sale Price", 
+       x = "Total Living Area (sf)", 
+       y = "Sale Price") + 
+  theme_minimal()
+```
+
+    ## NULL
+
+After plotting, it is clear that there is a relationship between the two
+variables. The graph has a positive correlation that indicates that as
+the total living area increases the price of the house goes up. This is
+seen by the regression line in blue. There are only a few outliers that
+are seen which could be associated with the house having some value
+either historic or being in an expensive area.
+
 Eitan’s work:
 
 ``` r
@@ -151,7 +186,7 @@ ggplot(ames, aes(x=Bedrooms)) +
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_bar()`).
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 The pattern shows us that most homes have between 2 and 4 bedrooms with
 there obviously being outliers on either end.
@@ -176,7 +211,7 @@ ggplot(ames, aes(x = Bedrooms, y = `Sale Price`)) +
     ## Warning: Removed 817 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
   labs(title = "Relationship Between Number of Bedrooms and Sale Price",
@@ -220,7 +255,7 @@ ggplot(ames, aes(x=YearBuilt)) + geom_histogram(binwidth = 5) + scale_x_continuo
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_bar()`).
 
-![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 After plotting just the “YearBuilt” variable, I plotted it against the
 special variable of interest “SalePrice”. Below is the scatterplot of
@@ -252,4 +287,4 @@ ggplot(ames, aes(x=`Sale Price`, y=YearBuilt)) + geom_point() + scale_y_continuo
     ## Warning: Removed 1782 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
